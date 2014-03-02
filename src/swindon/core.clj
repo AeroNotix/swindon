@@ -29,3 +29,9 @@
            baos (ByteArrayOutputStream.)]
        (org.apache.commons.io.IOUtils/copy iis baos)
        (.toByteArray baos))))
+
+(defn unzip-pkzip [buffer]
+  (let [bais (ByteArrayInputStream. buffer)
+        baos (ByteArrayOutputStream.)]
+    (org.apache.commons.io.IOUtils/copy bais baos)
+    (.toByteArray baos)))

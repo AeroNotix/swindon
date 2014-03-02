@@ -1,4 +1,4 @@
-(defproject swindon "0.0.1"
+(defproject swindon "0.0.2"
   :description "A simple wrapper around java.util.zip"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
