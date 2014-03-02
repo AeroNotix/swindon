@@ -4,6 +4,7 @@
            [java.util.zip DeflaterInputStream]
            [java.util.zip DeflaterOutputStream]
            [java.util.zip InflaterInputStream]
+           [java.util.zip ZipInputStream]
            [java.io ByteArrayInputStream]
            [java.io ByteArrayOutputStream]))
 
@@ -31,7 +32,7 @@
        (.toByteArray baos))))
 
 (defn unzip-pkzip [buffer]
-  (let [bais (ByteArrayInputStream. buffer)
+  (let [bais (ZipInputStream. (ByteArrayInputStream. buffer))
         baos (ByteArrayOutputStream.)]
     (org.apache.commons.io.IOUtils/copy bais baos)
     (.toByteArray baos)))
