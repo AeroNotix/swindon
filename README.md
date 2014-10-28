@@ -1,10 +1,6 @@
 # swindon
 
-A Clojure library designed to ... well, that part is up to you.
-
-## Usage
-
-FIXME
+A wrapper around java.util.zip using streams with a functional interface
 
 ## License
 
