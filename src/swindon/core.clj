@@ -8,12 +8,15 @@
            [java.io ByteArrayInputStream]
            [java.io ByteArrayOutputStream]))
 
+(def ^:private default-level 3)
 
 (defn zip
   ([buffer]
      (zip buffer false))
   ([buffer wrap]
-     (let [defl (Deflater. 3 wrap)
+     (zip buffer wrap default-level))
+  ([buffer wrap level]
+     (let [defl (Deflater. level wrap)
            bais (ByteArrayInputStream. buffer)
            dis (DeflaterInputStream. bais defl)
            baos (ByteArrayOutputStream.)]
